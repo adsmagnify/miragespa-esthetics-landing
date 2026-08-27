@@ -785,9 +785,9 @@ section.ed-course__details.lp-section {
 .ed-testimonial__slider-2 {
   margin-left: 0 !important;
   margin-right: 0 !important;
-  overflow: visible;
+  overflow: hidden !important;
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
 }
 
 .ed-testimonial__slider-2 .swiper-wrapper {
@@ -796,12 +796,12 @@ section.ed-course__details.lp-section {
 }
 
 .ed-testimonial__slider-2 .swiper-slide {
-  height: auto !important;
   box-sizing: border-box;
+  height: auto;
 }
 
 .ed-testimonial__slider-2 .ed-testimonial__slider-item {
-  height: auto !important;
+  height: 100%;
   margin-top: 0 !important;
   box-sizing: border-box;
 }

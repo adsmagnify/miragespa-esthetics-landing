@@ -241,6 +241,7 @@
     /*======================================================================================
       Testimonial Slider Two JS
      =======================================================================================*/
+    if (!document.querySelector(".lp-reviews") && !document.querySelector(".lp-register")) {
     const testimonialSliderTwo = new Swiper(".ed-testimonial__slider-2", {
       // Optional parameters
       slidesPerView: 1,
@@ -266,6 +267,7 @@
         },
       },
     });
+    }
 
     /*======================================================================================
       Testimonial Slider Three JS
@@ -475,11 +477,13 @@
 
 
 
+    if (!document.querySelector(".lp-register")) {
     $(window).on("load", function () {
       refreshSmoothScroll();
       setTimeout(refreshSmoothScroll, 300);
       setTimeout(refreshSmoothScroll, 1000);
     });
+    }
   }
 
   /*======================================================================================
