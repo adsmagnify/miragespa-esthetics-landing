@@ -1,0 +1,46 @@
+/* Custom Searchable Dropdown for Nice Select */
+.nice-select .list {
+    max-height: 400px;
+    overflow-y: auto !important;
+    padding-top: 50px; /* Space for sticky search box */
+}
+
+.nice-select-search-box {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.nice-select-search {
+    width: 100%;
+    height: 36px;
+    padding: 0 12px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.nice-select-search:focus {
+    border-color: var(--ed-primary-color, #c7976f);
+    box-shadow: 0 0 0 3px rgba(199, 151, 111, 0.1);
+}
+
+.nice-select .option {
+    line-height: 40px;
+    min-height: 40px;
+}
+
+/* Ensure nice-select list doesn't get cut off on mobile */
+@media screen and (max-width: 768px) {
+    .nice-select .list {
+        max-height: 300px;
+    }
+}

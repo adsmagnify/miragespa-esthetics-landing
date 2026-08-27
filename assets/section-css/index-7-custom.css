@@ -1,0 +1,169 @@
+/* Custom Color Overrides for Index-7 - Light Color Scheme with Brown Accents */
+
+/* Override root variables for lighter scheme */
+:root {
+    --index7-light-bg: #fafaf8;
+    --index7-cream: #f5f3f0;
+    --index7-soft-beige: #ede8e3;
+    --index7-brand-brown: #c7976f;
+    --index7-dark-brown: #8f6a4d;
+    --index7-text-dark: #4a4a4a;
+    --index7-text-light: #6b6b6b;
+}
+
+/* Call to Action Section - Use light background with brown accent */
+.mirage-gradient-bg {
+    background: linear-gradient(135deg, var(--index7-cream) 0%, var(--index7-soft-beige) 100%) !important;
+}
+
+.mirage-gradient-bg .ed-section-head__sm-title {
+    color: var(--index7-dark-brown) !important;
+}
+
+.mirage-gradient-bg .ed-section-head__title {
+    color: var(--index7-text-dark) !important;
+}
+
+.mirage-gradient-bg .ed-section-head__text,
+.mirage-gradient-bg .ed-section-head__text p {
+    color: var(--index7-text-light) !important;
+}
+
+.mirage-gradient-bg .ed-section-head__text ul li span {
+    color: var(--index7-text-light) !important;
+}
+
+.mirage-gradient-bg .ed-btn {
+    background: var(--index7-brand-brown) !important;
+    color: #ffffff !important;
+}
+
+.mirage-gradient-bg .ed-btn:hover {
+    background: var(--index7-dark-brown) !important;
+}
+
+.mirage-gradient-bg .ed-btn i {
+    background: var(--index7-dark-brown) !important;
+    color: #ffffff !important;
+}
+
+/* Update the circular background behind image in CTA */
+.mirage-gradient-bg .ed-call-action__img::before {
+    background: rgba(199, 151, 111, 0.15) !important;
+}
+
+/* Footer - Keep subtle background */
+.ed-footer.section-bg-color-1 {
+    background: var(--index7-cream) !important;
+}
+
+/* Ensure all section backgrounds are white/light */
+section {
+    background: #ffffff;
+}
+
+/* Accent colors for interactive elements */
+.ed-btn {
+    background: var(--index7-brand-brown);
+}
+
+.ed-btn:hover {
+    background: var(--index7-dark-brown);
+}
+
+/* Links and accents */
+a:hover {
+    color: var(--index7-brand-brown) !important;
+}
+
+/* Course cards - light background with brown accents */
+.ed-course__card {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+}
+
+.ed-course__price {
+    color: var(--index7-brand-brown) !important;
+}
+
+/* Testimonial section - light background */
+.ed-testimonial {
+    background: #ffffff !important;
+}
+
+/* Blog section - light background */
+.ed-blog {
+    background: #ffffff !important;
+}
+
+/* Feature icons - brown accents */
+.ed-w-choose__info-icon {
+    color: var(--index7-brand-brown) !important;
+}
+
+.ed-w-choose__info-icon.bg-1,
+.ed-w-choose__info-icon.bg-2,
+.ed-w-choose__info-icon.bg-3,
+.ed-w-choose__info-icon.bg-4 {
+    background: rgba(199, 151, 111, 0.1) !important;
+}
+
+/* Counter cards - subtle brown accent */
+.counter-card {
+    background: rgba(199, 151, 111, 0.08);
+    border: 1px solid rgba(199, 151, 111, 0.2);
+}
+
+.counter-card__icon {
+    color: var(--index7-brand-brown);
+}
+
+/* Ratings stars - brown color */
+.icofont-star {
+    color: var(--index7-brand-brown) !important;
+}
+
+/* Primary buttons throughout */
+.register-btn,
+.ed-btn {
+    background: var(--index7-brand-brown) !important;
+    color: #ffffff !important;
+}
+
+.register-btn:hover,
+.ed-btn:hover {
+    background: var(--index7-dark-brown) !important;
+}
+
+/* Headings - use dark brown for important headings */
+.mirage-best-choice-heading {
+    color: var(--index7-text-dark) !important;
+}
+
+.highlight-text {
+    color: var(--index7-brand-brown) !important;
+}
+
+/* Small titles - brown accent */
+.ed-section-head__sm-title {
+    color: var(--index7-dark-brown) !important;
+}
+
+/* Blog category badges - brown accent */
+.ed-blog__category {
+    background: var(--index7-brand-brown) !important;
+    color: #ffffff !important;
+}
+
+/* Footer links hover */
+.ed-footer__widget-links a:hover {
+    color: var(--index7-brand-brown) !important;
+}
+
+/* Ensure white backgrounds for main sections */
+.ed-why-choose,
+.ed-about,
+.ed-funfact,
+.ed-course {
+    background: #ffffff !important;
+}

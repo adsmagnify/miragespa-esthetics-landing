@@ -1,0 +1,740 @@
+/* ==========================================================================
+   Mirage Spa - Esthetics & Spa Therapy Course paid landing page
+   Landing-only sections. Header, footer, buttons, course components, fonts and
+   animations all come from the site's own CSS in assets/section-css/, loaded
+   before this file. Everything here uses the same --ed-* tokens.
+   ========================================================================== */
+
+/* The site defines this brown inline as .theme-bg-2 on its CTA sections
+   (partners, book-free, comparison). Named here so it is used consistently. */
+:root {
+  --ed-deep-brown: #8f6a4d;
+}
+
+/* ---------- Section rhythm ---------- */
+.lp-section {
+  padding: 80px 0;
+}
+
+.lp-section--alt {
+  background: #fdfaf8;
+}
+
+.lp-section__head {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.lp-section__head h2 {
+  font-size: 40px;
+  line-height: 1.25;
+  margin-bottom: 14px;
+  text-wrap: balance;
+}
+
+.lp-section__head p {
+  font-size: 17px;
+  margin-bottom: 0;
+}
+
+.lp-curr-group {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ed-title-color);
+  margin: 40px 0 8px;
+}
+
+.lp-curr-group:first-child {
+  margin-top: 0;
+}
+
+.lp-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--ed-primary-color);
+  margin-bottom: 12px;
+}
+
+/* ---------- Button variants (extend the site's .ed-btn) ----------
+   Brand palette only: tan #c7976f (--ed-primary-color), deep brown #8f6a4d
+   (the site's .theme-bg-2), cream #ecccb7 (--ed-tertiary-color). */
+.ed-btn--ghost {
+  background: transparent;
+  color: var(--ed-deep-brown);
+  box-shadow: inset 0 0 0 1px var(--ed-primary-color);
+}
+
+.ed-btn--ghost i {
+  background: var(--ed-primary-color);
+  color: var(--ed-white-color);
+}
+
+.ed-btn--ghost:hover {
+  background: var(--ed-deep-brown);
+  color: var(--ed-white-color);
+  box-shadow: inset 0 0 0 1px var(--ed-deep-brown);
+}
+
+.ed-btn--ghost-light {
+  background: transparent;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+
+.ed-btn--ghost-light i {
+  background: var(--ed-white-color);
+  color: var(--ed-deep-brown);
+}
+
+.ed-btn--ghost-light:hover {
+  background: #ffffff;
+  color: var(--ed-deep-brown);
+  box-shadow: inset 0 0 0 1px #ffffff;
+}
+
+/* ---------- Hero ---------- */
+.lp-hero {
+  padding: 72px 0 80px;
+}
+
+.lp-hero__content h1 {
+  font-size: 52px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  text-wrap: balance;
+}
+
+.lp-hero__lead {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.lp-hero__list {
+  display: grid;
+  gap: 14px;
+  margin: 0 0 32px;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-hero__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ed-title-color);
+}
+
+.lp-hero__list svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.lp-hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.lp-hero__note {
+  font-size: 14px;
+  color: var(--ed-paragraph-color);
+  margin-bottom: 0;
+}
+
+.lp-hero__media {
+  position: relative;
+}
+
+.lp-hero__media img {
+  /* Source is a 4000x6000 portrait; unconstrained it renders 824px tall and
+     pushes the CTA below the fold. Fixed height + cover keeps it balanced. */
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+
+.lp-hero__badge {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--ed-white-color);
+  border-radius: 16px;
+  padding: 16px 22px;
+  box-shadow: 0 18px 40px rgba(11, 11, 44, 0.14);
+}
+
+.lp-hero__badge strong {
+  display: block;
+  font-family: var(--ed-font-family-2);
+  font-size: 24px;
+  line-height: 1.1;
+  color: var(--ed-title-color);
+}
+
+.lp-hero__badge span {
+  font-size: 13px;
+  color: var(--ed-paragraph-color);
+}
+
+/* ---------- Trust strip ---------- */
+.lp-trust {
+  background: #f8f1ec;
+  border-top: 1px solid rgba(199, 151, 111, 0.18);
+  border-bottom: 1px solid rgba(199, 151, 111, 0.18);
+  padding: 22px 0;
+}
+
+.lp-trust__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px 42px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-trust__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ed-title-color);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.lp-trust__list svg {
+  flex-shrink: 0;
+}
+
+/* ---------- What you'll learn ---------- */
+.lp-learn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.lp-learn-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--ed-white-color);
+  border: 1px solid var(--ed-border-color);
+  border-radius: 14px;
+  padding: 22px 24px;
+  transition: all 0.3s ease;
+}
+
+.lp-learn-card:hover {
+  border-color: var(--ed-primary-color);
+  box-shadow: 0 10px 30px rgba(199, 151, 111, 0.12);
+}
+
+.lp-learn-card svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.lp-learn-card p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ed-title-color);
+  line-height: 1.5;
+}
+
+/* ---------- Closing CTA ---------- */
+/* The band colour the site uses for its own CTA sections: .theme-bg-2 #8f6a4d
+   (partners / book-free / comparison pages), with a standard tan .ed-btn on it. */
+.lp-cta {
+  background: var(--ed-deep-brown);
+  padding: 72px 0;
+  text-align: center;
+}
+
+.lp-cta h2 {
+  color: #ffffff;
+  font-size: 40px;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  text-wrap: balance;
+}
+
+.lp-cta p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 17px;
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+.lp-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* ---------- Course block tweaks ---------- */
+
+/* Check bullets in the "What's Included" lists.
+   The site tints these with a filter keyed to alt="icon-check-blue". These icons
+   are decorative, so they keep alt="" here and the filter is matched on the file
+   instead - same gold as the live site, without the meaningless alt text being
+   read out on every list item. */
+.ed-course__details-list li img[src$="icon-check-blue.svg"] {
+  filter: brightness(0) saturate(100%) invert(70%) sepia(15%) saturate(1200%)
+    hue-rotate(340deg) brightness(1.1) contrast(0.9);
+}
+
+/* The overview heading is an h2 for heading order; give it the same look
+   product.css defines for .ed-product-short h3 on the live site. */
+.ed-product-short h2 {
+  color: var(--ed-title-color);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -0.36px;
+  margin-bottom: 24px;
+}
+
+.lp-course-meta .ed-course__info-box {
+  height: 100%;
+}
+
+.lp-pricing-wrap {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.ed-course__pricing-featured-card .ed-btn {
+  margin-top: 24px;
+}
+
+/* .ed-btn reserves 67px of right padding for its arrow icon well. The full-width
+   CTAs here carry no icon, so that padding pushed the label 37px left of centre.
+   Centre them properly with symmetric padding. */
+.ed-btn.w-100 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+/* Landing sections reuse .ed-course__details for component parity, but that
+   class carries the course page's own top/bottom padding. */
+section.ed-course__details.lp-section {
+  padding: 80px 0;
+}
+
+/* ---------- Responsive ---------- */
+
+/* Below 1200px .ed-container switches to percentage padding (5% / 10%).
+   Bootstrap's g-5 gutter pulls rows 24px wider than that, which pushed the
+   page past the viewport on phones. */
+@media only screen and (max-width: 1199.98px) {
+  .lp-hero .row,
+  .lp-section .row {
+    --bs-gutter-x: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .lp-hero__content h1 {
+    font-size: 44px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .lp-section,
+  section.ed-course__details.lp-section {
+    padding: 64px 0;
+  }
+
+  .lp-hero {
+    padding: 56px 0 64px;
+  }
+
+  .lp-hero__content h1 {
+    font-size: 38px;
+  }
+
+  .lp-hero__media {
+    margin-top: 40px;
+  }
+
+  .lp-hero__media img {
+    height: 380px;
+  }
+
+  .lp-section__head h2,
+  .lp-cta h2 {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .lp-section,
+  section.ed-course__details.lp-section {
+    padding: 52px 0;
+  }
+
+  .lp-section__head {
+    margin-bottom: 34px;
+  }
+
+  .lp-hero__content h1 {
+    font-size: 32px;
+  }
+
+  .lp-hero__lead {
+    font-size: 16px;
+  }
+
+  .lp-learn-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ed-product-short h2 {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 12px;
+  }
+
+  .lp-cta {
+    padding: 56px 0;
+  }
+
+  .lp-section__head h2,
+  .lp-cta h2 {
+    font-size: 28px;
+  }
+}
+
+/* Primary button on the brown band = the site's default .ed-btn (tan with a
+   white icon well), exactly as on the partners CTA. */
+.lp-cta .ed-btn {
+  background: var(--ed-primary-color);
+  color: var(--ed-white-color);
+}
+
+.lp-cta .ed-btn:hover {
+  background: var(--ed-tertiary-color);
+  color: var(--ed-deep-brown);
+}
+
+.lp-cta .ed-btn i {
+  background: var(--ed-white-color);
+  color: var(--ed-primary-color);
+}
+
+/* ---------- Landing topbar ---------- */
+/* Nav header is gone: the topbar is the only chrome, so it carries the CTA
+   and sticks to the top of the page. */
+.ed-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: var(--ed-white-color);
+  border-bottom: 1px solid var(--ed-border-color);
+}
+
+.ed-topbar__inner {
+  gap: 20px;
+}
+
+.ed-topbar__info {
+  gap: 24px;
+}
+
+.lp-topbar-cta {
+  flex-shrink: 0;
+  height: 46px;
+  padding: 13px 58px 13px 24px;
+  font-size: 15px;
+}
+
+.lp-topbar-cta i {
+  width: 38px;
+  height: 38px;
+  line-height: 44px;
+  font-size: 17px;
+  top: 4px;
+}
+
+@media only screen and (max-width: 767px) {
+  .lp-topbar-cta {
+    height: 42px;
+    padding: 11px 48px 11px 18px;
+    font-size: 14px;
+  }
+
+  .lp-topbar-cta i {
+    width: 34px;
+    height: 34px;
+    line-height: 40px;
+    font-size: 15px;
+  }
+}
+
+/* ---------- On-page Zoho register form ---------- */
+.lp-register {
+  padding-top: 0;
+}
+
+.lp-register .ed-contact__form {
+  background: #fff;
+  padding: 48px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.lp-register .ed-contact__form-head {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.lp-register .ed-contact__form-sm-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ed-primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.lp-register .ed-contact__form-big-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ed-paragraph-color);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.lp-register .form-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ed-title-color);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f5ebe0;
+  text-align: left;
+}
+
+.lp-register .ed-contact__form-main .form-group {
+  margin-bottom: 24px;
+}
+
+.lp-register .ed-contact__form-main label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ed-title-color);
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.lp-register .ed-contact__form-main input[type="text"],
+.lp-register .ed-contact__form-main select {
+  width: 100%;
+  padding: 14px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s;
+  background-color: #fff;
+  font-family: inherit;
+  height: 52px;
+}
+
+.lp-register .ed-contact__form-main .nice-select {
+  height: 52px;
+  line-height: 50px;
+  padding-left: 20px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 15px;
+  border: 1px solid #e0e0e0;
+  float: none;
+  overflow: visible;
+}
+
+.lp-register .ed-contact__form-main .nice-select .list {
+  width: 100%;
+  max-height: 280px;
+  overflow-y: auto;
+  white-space: normal;
+  z-index: 30;
+}
+
+.lp-register .nice-select-search-box {
+  position: sticky;
+  top: 0;
+  z-index: 11;
+  padding: 10px;
+  list-style: none;
+  min-height: auto;
+  line-height: normal;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.lp-register .nice-select-search {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.lp-register .ed-contact__form-main input:focus,
+.lp-register .ed-contact__form-main select:focus,
+.lp-register .ed-contact__form-main .nice-select:focus,
+.lp-register .ed-contact__form-main .nice-select.open {
+  outline: none;
+  border-color: var(--ed-primary-color);
+  box-shadow: 0 0 0 3px rgba(199, 151, 111, 0.1);
+}
+
+.lp-register .ed-contact__form-main .form-check {
+  margin-top: 8px;
+}
+
+.lp-register .ed-contact__form-main .form-check-label {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ed-paragraph-color);
+  font-weight: 400;
+}
+
+.lp-register .ed-contact__form-main .form-check-label a {
+  color: var(--ed-primary-color);
+  text-decoration: underline;
+}
+
+.lp-register .ed-contact__form-main .zf-errorMessage {
+  display: none;
+  font-size: 13px;
+  color: #c0392b;
+  margin-top: 6px;
+}
+
+.lp-register .ed-contact__form-btn {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.lp-register .submit-btn {
+  background: #8f6a4d !important;
+  color: #ffffff !important;
+  letter-spacing: 1px !important;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+}
+
+.lp-register .submit-btn:hover {
+  background: #7a5a3f !important;
+  color: #ffffff !important;
+}
+
+.datepicker {
+  padding: 10px !important;
+  border-radius: 12px !important;
+  border: 1px solid #f5ebe0 !important;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1) !important;
+  background: #fff !important;
+}
+
+.datepicker table tr td,
+.datepicker table tr th {
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+}
+
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.active {
+  background: #8f6a4d !important;
+  color: #fff !important;
+}
+
+.datepicker table tr td.today {
+  background-color: #fdfaf8;
+  color: #8f6a4d;
+  border: 1px solid #8f6a4d;
+}
+
+@media only screen and (max-width: 991.99px) {
+  .lp-register .ed-contact__form {
+    padding: 40px 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .lp-register .ed-contact__form {
+    padding: 30px 20px;
+  }
+
+  .lp-register .ed-contact__form-big-title {
+    font-size: 16px;
+  }
+
+  .lp-register .ed-contact__form-main .nice-select .list {
+    max-height: 300px;
+  }
+}
+
+.lp-thankyou {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+  background: #fdfaf8;
+}
+
+.lp-thankyou__card {
+  background: #fff;
+  border: 1px solid rgba(199, 151, 111, 0.2);
+  border-radius: 24px;
+  padding: 64px 40px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+}
+
+.lp-thankyou__card h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.lp-thankyou__card p {
+  font-size: 18px;
+  max-width: 560px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}

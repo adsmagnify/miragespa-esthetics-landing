@@ -1,0 +1,29 @@
+# Mirage Spa - paid traffic landing page
+#
+# This page must never appear in organic search results. That is enforced by the
+# noindex robots meta tag in index.html and by the X-Robots-Tag response header
+# (see _headers / vercel.json / .htaccess).
+#
+# Crawling is deliberately NOT blocked here. A "Disallow: /" would stop crawlers
+# reading the noindex tag, which is what actually removes the page from the index
+# — a blocked URL can still be listed in Google if anyone ever links to it.
+#
+# Ad crawlers must be allowed, or Google Ads/Microsoft Ads cannot check the
+# landing page and ads can be disapproved or given a poor landing page score.
+
+User-agent: *
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+User-agent: AdsBot-Google-Mobile-Apps
+Allow: /
+
+User-agent: adidxbot
+Allow: /
+
+# No sitemap is published for this property on purpose.

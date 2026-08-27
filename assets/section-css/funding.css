@@ -1,0 +1,173 @@
+/* Funding Details Premium Styles */
+.ed-funding-section {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+    background: #fff;
+}
+
+.ed-funding-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 0% 0%, rgba(199, 151, 111, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(199, 151, 111, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.ed-funding-header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.ed-funding-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(199, 151, 111, 0.1);
+    color: #C99770;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+}
+
+.ed-funding-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #1A1A1A;
+    margin-bottom: 20px;
+}
+
+.ed-funding-subtitle {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.ed-funding-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.ed-funding-card {
+    background: #fff;
+    border: 1px solid rgba(199, 151, 111, 0.15);
+    border-radius: 24px;
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important;
+}
+
+.ed-funding-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(199, 151, 111, 0.12);
+    border-color: rgba(199, 151, 111, 0.4);
+}
+
+.ed-funding-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba(199, 151, 111, 0.1) 0%, rgba(199, 151, 111, 0.2) 100%);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    color: #C99770;
+    transition: all 0.3s ease;
+}
+
+.ed-funding-card:hover .ed-funding-icon-wrapper {
+    background: #C99770;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.ed-funding-icon-wrapper i {
+    font-size: 28px;
+}
+
+.ed-funding-card h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.ed-funding-card p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.ed-funding-link {
+    color: #C99770;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.ed-funding-link i {
+    transition: transform 0.3s ease;
+}
+
+.ed-funding-card:hover .ed-funding-link i {
+    transform: translateX(5px);
+}
+
+.ed-funding-footer {
+    margin-top: 60px;
+    text-align: center;
+}
+
+/* Trust Badge Overlay */
+.ed-funding-trust-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    background: rgba(199, 151, 111, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C99770;
+    font-size: 14px;
+}
+
+@media (max-width: 991px) {
+    .ed-funding-title {
+        font-size: 32px;
+    }
+    .ed-funding-subtitle {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .ed-funding-section {
+        padding: 60px 0;
+    }
+    .ed-funding-card {
+        padding: 30px;
+    }
+}

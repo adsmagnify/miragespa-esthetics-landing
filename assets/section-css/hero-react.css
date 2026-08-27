@@ -1,0 +1,327 @@
+/* Hero Section - Standalone Styles - Updated 2026-02-03 */
+.hero-section.hero-1 {
+    position: relative;
+    height: 920px;
+    overflow: hidden;
+}
+
+.hero-section.hero-1,
+.hero-section.hero-1 .swiper,
+.hero-section.hero-1 .swiper-wrapper,
+.hero-section.hero-1 .swiper-slide {
+    height: 100%;
+}
+
+
+/* Navigation Buttons - Original side positioning */
+.hero-1 .array-button {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    left: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+@media (max-width: 1399px) {
+    .hero-1 .array-button {
+        display: none;
+    }
+}
+
+.hero-1 .array-button button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    pointer-events: auto;
+    border: 2px solid #c99770;
+    background: transparent;
+}
+
+/* Left arrow - Outlined circle */
+.hero-1 .array-prev {
+    background: transparent !important;
+    border: 2px solid #c99770 !important;
+    color: #c99770 !important;
+}
+
+.hero-1 .array-prev i {
+    color: #c99770 !important;
+    font-size: 20px;
+}
+
+.hero-1 .array-prev:hover {
+    background: rgba(201, 151, 112, 0.1) !important;
+    border-color: #c99770 !important;
+    transform: scale(1.1);
+}
+
+.hero-1 .array-prev:hover i {
+    color: #c99770 !important;
+}
+
+/* Right arrow - Filled circle */
+.hero-1 .array-next {
+    background: #c99770 !important;
+    border: 2px solid #c99770 !important;
+    color: white !important;
+}
+
+.hero-1 .array-next i {
+    color: white !important;
+    font-size: 20px;
+}
+
+.hero-1 .array-next:hover {
+    background: #b8875f !important;
+    border-color: #b8875f !important;
+    transform: scale(1.1);
+}
+
+.hero-1 .array-next:hover i {
+    color: white !important;
+}
+
+
+/* Hero Image Background */
+.hero-image {
+    overflow: hidden;
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    inset: 0;
+
+    opacity: 1;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1);
+    -webkit-transition: all 8s ease-out 0s;
+    -moz-transition: all 8s ease-out 0s;
+    -ms-transition: all 8s ease-out 0s;
+    -o-transition: all 8s ease-out 0s;
+    transition: all 8s ease-out 0s;
+}
+
+/* Step 1 (LCP): real <img> fills the hero frame like cover background */
+.hero-image picture {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.hero-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.55) 40%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.swiper-slide-active .hero-image {
+    -webkit-transform: scale(1.12);
+    -moz-transform: scale(1.12);
+    transform: scale(1.12);
+}
+
+/* Hero Content */
+.hero-content {
+    padding: 180px 0 180px;
+    position: relative;
+    z-index: 9;
+}
+
+@media (max-width: 767px) {
+    .hero-content {
+        text-align: center;
+        margin: 0 auto;
+        padding: 130px 0 130px;
+    }
+}
+
+.hero-content h6 {
+    color: #fff;
+    background-color: #1D8F2C; /* Theme color - adjust as needed */
+    padding: 8px 20px;
+    line-height: 1;
+    display: inline-block;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.hero-content h1 {
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+@media (max-width: 1399px) {
+    .hero-content h1 {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero-content h1 {
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-content h1 {
+        font-size: 38px;
+        margin-bottom: 24px;
+        line-height: 1.1;
+        overflow-wrap: break-word;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero-content h1 {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+    .hero-content p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+.hero-content h1 span {
+    color: #1D8F2C; /* Theme color - adjust as needed */
+}
+
+.hero-content p {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* Hero Button */
+.hero-button {
+    margin-top: 20px;
+}
+
+.theme-btn {
+    background-color: #1D8F2C; /* Theme color - adjust as needed */
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 24px 40px;
+    border-radius: 0;
+    text-transform: capitalize;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    line-height: 1;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.theme-btn::before {
+    content: "";
+    background-color: #232434; /* Header color - adjust as needed */
+    width: 0;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    z-index: -1;
+}
+
+.theme-btn::after {
+    content: "";
+    background-color: #232434; /* Header color - adjust as needed */
+    width: 0;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    z-index: -1;
+}
+
+.theme-btn i {
+    margin-left: 10px;
+}
+
+.theme-btn:hover {
+    color: #fff;
+}
+
+.theme-btn:hover::before,
+.theme-btn:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .theme-btn {
+        padding: 20px 32px;
+    }
+}
+
+@media (max-width: 575px) {
+    .theme-btn {
+        padding: 18px 30px;
+        font-size: 14px;
+    }
+}
+
+/* Utility Classes */
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-section.hero-1 {
+  height: 100vh;
+  min-height: 600px;
+}
+.hero-section.hero-1 .hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 991.99px) { .hero-section.hero-1 { height: 80vh; } }
+@media (max-width: 767px)    { .hero-section.hero-1 { height: 70vh; min-height: 420px; } }
