@@ -495,7 +495,7 @@ section.ed-course__details.lp-section {
 
 /* ---------- On-page Zoho register form ---------- */
 .lp-register {
-  padding-top: 0;
+  padding-top: 56px;
 }
 
 .lp-register .ed-contact__form {
@@ -737,4 +737,267 @@ section.ed-course__details.lp-section {
   max-width: 560px;
   margin: 0 auto 32px;
   line-height: 1.6;
+}
+
+/* ---------- Practical cards (must wrap, never overlap) ---------- */
+.ed-modern-modules {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)) !important;
+  gap: 20px !important;
+  width: 100%;
+  align-items: stretch;
+}
+
+.ed-modern-module-card {
+  min-width: 0;
+  max-width: 100%;
+  height: 100%;
+  transform: none !important;
+  visibility: visible !important;
+  animation: none !important;
+}
+
+.ed-modern-module-card .module-header {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.ed-modern-module-card h5 {
+  flex: 1 1 140px;
+  min-width: 0;
+  word-break: break-word;
+}
+
+@media only screen and (max-width: 767px) {
+  .ed-modern-modules {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ---------- Reviews slider (stop bleed / overlap) ---------- */
+.ed-testimonial.ed-testimonial--style3.section-gap {
+  position: relative;
+  z-index: 1;
+  overflow: visible !important;
+  padding-bottom: 80px !important;
+}
+
+.ed-testimonial__slider-2 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  overflow: visible;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.ed-testimonial__slider-2 .swiper-wrapper {
+  align-items: stretch;
+  height: auto !important;
+}
+
+.ed-testimonial__slider-2 .swiper-slide {
+  height: auto !important;
+  box-sizing: border-box;
+}
+
+.ed-testimonial__slider-2 .ed-testimonial__slider-item {
+  height: auto !important;
+  margin-top: 0 !important;
+  box-sizing: border-box;
+}
+
+.ed-testimonial--style3 .swiper-pagination,
+.ed-testimonial--style3 .swiper-pagination.swiper-pagination-bullets {
+  position: relative !important;
+  bottom: auto !important;
+  left: 0 !important;
+  width: 100% !important;
+  margin-top: 20px;
+  transform: none !important;
+}
+
+/* Push the enrolment form below the review cards */
+#register.lp-register,
+.lp-register {
+  position: relative;
+  z-index: 0;
+  margin-top: 48px;
+  padding-top: 80px !important;
+  background: #ffffff;
+}
+
+@media only screen and (max-width: 767px) {
+  #register.lp-register,
+  .lp-register {
+    margin-top: 140px;
+    padding-top: 40px !important;
+  }
+}
+
+/* ---------- Interactive curriculum ---------- */
+.lp-curr-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.lp-curr-tab {
+  cursor: pointer;
+  border: 1px solid #e5e5e5;
+  background: #ffffff;
+  color: var(--ed-title-color);
+  border-radius: 999px;
+  padding: 10px 18px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.lp-curr-tab:hover,
+.lp-curr-tab:focus-visible {
+  border-color: #c99770;
+  color: #8f6a4d;
+  outline: none;
+}
+
+.lp-curr-tab.is-active {
+  background: #c99770;
+  border-color: #c99770;
+  color: #ffffff;
+}
+
+.lp-curr-panel {
+  display: none;
+}
+
+.lp-curr-panel.is-active {
+  display: block;
+}
+
+.ed-modern-curriculum {
+  background: #ffffff;
+  border: 1px solid rgba(199, 151, 111, 0.22);
+  border-radius: 16px;
+  padding: 4px 8px 8px;
+}
+
+.ed-modern-curriculum.is-expanded {
+  max-height: min(360px, 60vh);
+  overflow-y: auto;
+}
+
+.ed-modern-curriculum:not(.is-expanded) .curriculum-item.is-extra {
+  display: none !important;
+}
+
+button.curriculum-item {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 0;
+  padding: 12px 8px !important;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+button.curriculum-item .curriculum-number {
+  min-width: 36px !important;
+  height: 36px !important;
+  font-size: 13px !important;
+}
+
+button.curriculum-item:hover,
+button.curriculum-item:focus-visible {
+  background: #fdfaf8;
+  outline: none;
+}
+
+.curriculum-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.curriculum-title {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ed-title-color);
+  line-height: 1.35;
+}
+
+.curriculum-desc {
+  display: none;
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ed-paragraph-color);
+}
+
+.curriculum-item.is-open .curriculum-desc {
+  display: block;
+}
+
+.curriculum-chevron {
+  width: 7px;
+  height: 7px;
+  margin-top: 8px;
+  border-right: 2px solid #c99770;
+  border-bottom: 2px solid #c99770;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.curriculum-item.is-open .curriculum-chevron {
+  transform: rotate(225deg);
+  margin-top: 10px;
+}
+
+.lp-curr-more {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 16px;
+  min-height: 44px;
+  border: 1px dashed rgba(199, 151, 111, 0.55);
+  border-radius: 12px;
+  background: #fdfaf8;
+  color: #8f6a4d;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lp-curr-more:hover,
+.lp-curr-more:focus-visible {
+  background: #f8f1ec;
+  outline: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .lp-curr-tab {
+    flex: 1 1 calc(50% - 8px);
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  button.curriculum-item {
+    gap: 10px;
+    padding: 10px 4px !important;
+  }
+
+  .curriculum-title {
+    font-size: 14px;
+  }
 }
