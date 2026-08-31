@@ -108,6 +108,63 @@
     item.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
 
+  function initVideoStories() {
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.lp-video-card'));
+    if (!cards.length) return;
+
+    function pauseOthers(active) {
+      cards.forEach(function (card) {
+        if (card === active) return;
+        var other = card.querySelector('video');
+        if (other && !other.paused) other.pause();
+      });
+    }
+
+    cards.forEach(function (card) {
+      var video = card.querySelector('video');
+      var play = card.querySelector('.lp-video-card__play');
+      if (!video || !play) return;
+
+      video.addEventListener('loadedmetadata', function () {
+        if (video.videoWidth > video.videoHeight) {
+          card.classList.add('is-landscape');
+        } else {
+          card.classList.remove('is-landscape');
+        }
+      });
+
+      function togglePlay() {
+        if (video.paused) {
+          pauseOthers(card);
+          video.setAttribute('controls', 'controls');
+          var playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(function () {});
+          }
+        } else {
+          video.pause();
+        }
+      }
+
+      play.addEventListener('click', togglePlay);
+      video.addEventListener('click', function () {
+        if (!card.classList.contains('is-playing')) togglePlay();
+      });
+      video.addEventListener('play', function () {
+        card.classList.add('is-playing');
+        pauseOthers(card);
+      });
+      video.addEventListener('pause', function () {
+        if (video.ended) return;
+        card.classList.remove('is-playing');
+      });
+      video.addEventListener('ended', function () {
+        card.classList.remove('is-playing');
+        video.removeAttribute('controls');
+      });
+    });
+  }
+
   function initCurriculumAccordion(root) {
     var preview = 5;
     var items = Array.prototype.slice.call(root.querySelectorAll('.curriculum-item'));
@@ -164,6 +221,7 @@
 
   function bootLanding() {
     initReviews();
+    initVideoStories();
     initCurriculum();
   }
 
