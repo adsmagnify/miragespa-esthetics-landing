@@ -20,6 +20,26 @@
   background: #fdfaf8;
 }
 
+.lp-register--top {
+  padding: 48px 0 32px;
+  background: #fdfaf8;
+}
+
+.lp-register-top__card {
+  box-shadow: 0 12px 40px rgba(11, 11, 44, 0.06);
+}
+
+.lp-register-top__hint {
+  font-size: 14px;
+  color: var(--ed-paragraph-color);
+}
+
+.lp-register-top__hint a {
+  color: #C99770;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 .lp-section__head {
   max-width: 720px;
   margin: 0 auto 48px;
